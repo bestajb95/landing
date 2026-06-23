@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>취업을 업으로 — 기록</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main>
+
+    <!-- ① 히어로: 프로필 이미지 자리 + 확정 헤드라인 4줄 -->
+    <section class="hero">
+      <div class="hero__inner">
+        <!--
+          두 사진을 겹쳐 쌓고 데스크탑 호버 시 위(profile1)를 투명하게 → 아래(profile2) 노출.
+          화자가 assets/profile1.jpg, profile2.jpg 를 넣으면 바로 동작.
+          두 파일이 아직 없어도 .hero__photo 배경색(--bg-soft)이 깔려 깨진 아이콘이 흉하게 뜨지 않음.
+        -->
+        <div class="hero__photo">
+          <img class="hero__img hero__img--top" src="assets/profile1.jpg" alt="프로필" width="320" height="320" />
+          <img class="hero__img hero__img--bottom" src="assets/profile2.jpg" alt="" aria-hidden="true" width="320" height="320" />
+        </div>
+        <div class="hero__copy">
+          <p>만 30, 고작 1년 조금 넘게 일한 마케터가 멀쩡한 회사 나와서 다시 시장에 섰습니다.</p>
+          <p>확신은 없습니다. 방향은 있고요.</p>
+          <p>정석대로 이직하는 대신, 일하던 방식 그대로, 취업을 업으로 대해보기로 했습니다.</p>
+          <p>잘 될지는 저도 궁금합니다. 그 과정을 하나씩 올립니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ② 영상 임베드: 유튜브 iframe 자리 (실제 URL 나오면 아래 박스를 iframe으로 교체) -->
+    <section class="video">
+      <div class="video__frame">
+        <!--
+          나중에 이 div 안을 아래 형태로 교체:
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="1화"
+                  allowfullscreen></iframe>
+        -->
+        <span class="video__label">1화 영상 자리</span>
+      </div>
+    </section>
+
+    <!-- ③ 대문 길안내: 얇은 띠, 두 줄 -->
+    <section class="guide">
+      <p>가져가 쓸 것과, 배워갈 것을 여기 모읍니다.</p>
+      <p>시작은 거의 빈손입니다. 채워지는 걸 같이 보시죠. 훈수는 언제든.</p>
+    </section>
+
+    <!-- ④ 칩 A / 칩 B: 가로 2칸. 내용물 0개 → 정직한 빈 상태 -->
+    <section class="chips">
+      <!-- 링크 목적지 미정 → href="#" 자리. 다음 TASK에서 실제 경로 연결 -->
+      <a class="chip" href="#">
+        <span class="chip__label">도구함</span>
+        <span class="chip__sub">코드 및 템플릿</span>
+        <span class="chip__empty">아직 비었음 / 채워지는 중</span>
+      </a>
+      <a class="chip" href="#">
+        <span class="chip__label">실무 노트</span>
+        <span class="chip__sub">마케팅 현장 기록</span>
+        <span class="chip__empty">아직 비었음 / 채워지는 중</span>
+      </a>
+    </section>
+
+    <!-- ⑤ 위젯 자리: 밋밋한 흔적만. 숫자·그래프·급여 표현 금지 -->
+    <section class="widget">
+      <p class="widget__note">성과 추적 중</p>
+    </section>
+
+    <!-- ⑥ 채널 링크: 페이지에서 가장 또렷하게. URL 미정 → href="#" 자리 -->
+    <section class="channels">
+      <!-- 다음 TASK에서 각 href에 실제 채널 URL 연결 -->
+      <a class="channel" href="#">스레드</a>
+      <a class="channel" href="#">틱톡</a>
+      <a class="channel" href="#">인스타</a>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

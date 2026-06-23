@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-label="사진 준비 중">
+  <rect width="320" height="320" fill="#d9d9d9"/>
+  <rect x="0.5" y="0.5" width="319" height="319" fill="none" stroke="#bcbcbc" stroke-width="1"/>
+  <text x="160" y="168" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" fill="#7a7a7a" text-anchor="middle" dominant-baseline="middle">사진 준비 중</text>
+</svg>

@@ -1,0 +1,227 @@
+/* ── 기본 톤 ──────────────────────────────────────────── */
+:root {
+  /* 흑백 기반 토큰 */
+  --ink: #1c1c1c;
+  --ink-soft: #6b6b6b;
+  --line: #e3e3e3;
+  --bg: #ffffff;
+  --bg-soft: #f6f6f4;
+  --accent: #1c1c1c;
+
+  /* 포인트 컬러 (민트) — 추후 퍼스널컬러 진단 후 이 값만 교체.
+     색은 반드시 이 변수들로만 쓰고 어디에도 하드코딩하지 않는다. */
+  --point: #3ec9a7;        /* 민트 본색 */
+  --point-soft: #e6f7f1;   /* 민트 연한 배경용 */
+  --point-ink: #16a085;    /* 민트 위 텍스트/진한 변형 (호버 등) */
+
+  --max: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section { padding: 40px 0; }
+
+/* ── ① 히어로 (능청·여유: 큰 글씨 + 넉넉한 여백) ─────────── */
+.hero { padding-top: 72px; padding-bottom: 56px; }
+
+.hero__inner {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+/* 두 프로필 사진을 겹쳐 쌓는 컨테이너.
+   배경색을 깔아 두 jpg가 아직 없을 때 깨진 아이콘이 흉하게 뜨지 않게 한다. */
+.hero__photo {
+  flex: 0 0 auto;
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 8px;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+.hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.hero__img--top { z-index: 2; transition: opacity 0.25s ease; } /* 위 사진 (profile1) */
+.hero__img--bottom { z-index: 1; }                              /* 아래 사진 (profile2) */
+
+/* 데스크탑 호버 시 위 사진이 사라져 아래 사진이 드러남 */
+.hero__photo:hover .hero__img--top { opacity: 0; }
+
+.hero__copy { flex: 1 1 auto; }
+
+.hero__copy p {
+  margin: 0 0 14px;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.hero__copy p:last-child { margin-bottom: 0; }
+
+/* ── ② 영상 임베드 ────────────────────────────────────── */
+.video__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* aspect-ratio 미지원 브라우저용 폴백 */
+@supports not (aspect-ratio: 16 / 9) {
+  .video__frame { padding-top: 56.25%; }
+  .video__frame .video__label {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+.video__label {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ── ③ 대문 길안내 (얇은 띠) ──────────────────────────── */
+.guide {
+  padding: 18px 20px;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.guide p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+
+/* ── ④ 칩 A / 칩 B (가로 2칸) ─────────────────────────── */
+.chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* 칩 (실무·밀도: 히어로보다 한 단계 작고 단정하게) */
+.chip {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 18px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+/* 호버 시 회색 대신 민트 테두리로 살짝 반응 */
+.chip:hover {
+  border-color: var(--point);
+  background: var(--point-soft);
+}
+
+.chip__label {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.chip__sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.chip__empty {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #a3a3a3;
+}
+
+/* ── ⑤ 위젯 자리 ─────────────────────────────────────── */
+.widget {
+  text-align: center;
+  padding: 28px 0;
+}
+
+.widget__note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #a3a3a3;
+}
+
+/* ── ⑥ 채널 링크 (가장 또렷하게) ─────────────────────── */
+.channels {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 64px;
+}
+
+/* 채널 버튼: 아래쪽이지만 예외적으로 다시 또렷하게 (민트) — 최종 목적지 */
+.channel {
+  padding: 14px 28px;
+  background: var(--point);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+.channel:hover { background: var(--point-ink); }
+
+/* ── 모바일: 히어로 세로 배치 + 프로필 한 장(profile1)만 고정 ── */
+@media (max-width: 560px) {
+  .hero__inner { flex-direction: column; text-align: center; }
+  .hero__photo { width: 170px; height: 170px; }
+  .hero__copy p { font-size: 1.12rem; }
+  .chips { grid-template-columns: 1fr 1fr; }
+
+  /* 폰엔 호버가 없으므로 아래 사진을 숨기고 전환 효과도 끈다 (profile1만 표시) */
+  .hero__img--bottom { display: none; }
+  .hero__photo:hover .hero__img--top { opacity: 1; }
+}
