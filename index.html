@@ -30,15 +30,22 @@
       </div>
     </section>
 
-    <!-- ② 영상 임베드: 유튜브 iframe 자리 (실제 URL 나오면 아래 박스를 iframe으로 교체) -->
+    <!-- ② 영상 임베드: 유튜브 iframe -->
     <section class="video">
       <div class="video__frame">
         <!--
-          나중에 이 div 안을 아래 형태로 교체:
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="1화"
-                  allowfullscreen></iframe>
+          ⚠ 임시 테스트 영상(M7lc1UVf-VE) — 비율·레이아웃 검증용.
+          구글 공식 YouTube IFrame API 문서의 임베드 데모 영상이라 외부 임베드가 안정적으로 허용됨.
+          (직전의 aqz-KE-bpKQ/Big Buck Bunny는 오류 153 — 소유자 외부 임베드 차단으로 교체)
+          발행 시 아래 embed/ 뒤의 ID를 실제 1화 영상 ID로 교체할 것.
+          반드시 embed/ 경로 형태 유지 (watch?v= 형태는 임베드 안 됨).
         -->
-        <span class="video__label">1화 영상 자리</span>
+        <iframe
+          src="https://www.youtube.com/embed/M7lc1UVf-VE"
+          title="1화"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
     </section>
 
