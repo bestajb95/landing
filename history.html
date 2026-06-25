@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>과거 이력 — 실무 노트</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/history.css" />
+</head>
+<body>
+  <main class="history">
+
+    <!-- ① 페이지 헤더 (담백하게) -->
+    <header class="history__header">
+      <h1 class="history__title">과거 이력</h1>
+      <p class="history__lead">마케팅 현장 기록</p>
+    </header>
+
+    <!-- ② 시간 궤적 차트 (Chart.js 누적영역) -->
+    <section class="chart-block">
+      <h2 class="section-title">
+        시간을 어디에 배분했는가
+        <span class="section-title__sub">입사부터 후기까지, 영역별 비중의 변화</span>
+      </h2>
+      <div class="chart-wrap">
+        <!-- Chart.js가 로드되면 이 canvas에 그려진다. 미로딩 시 아래 폴백 문구 표시 -->
+        <canvas id="trajectoryChart"></canvas>
+        <p class="chart-fallback" id="chartFallback">차트를 불러오는 중…</p>
+      </div>
+      <p class="chart-note">구글 캘린더 기록 기반 근사치 (실무 약 1,604시간)</p>
+    </section>
+
+    <!-- ③ 경험 카드 3장 (시딩 → 데이터 → 채용 순서 고정) -->
+    <section class="cards-block">
+      <h2 class="section-title">경험</h2>
+      <div class="cards">
+
+        <!-- 카드 1 — 인플루언서 시딩 -->
+        <article class="card">
+          <div class="card__label">인플루언서 시딩</div>
+          <div class="card__slot">
+            <span class="card__slot-key">무엇</span>
+            <p class="card__slot-val">저예산 나노 크리에이터 중심의 인플루언서 시딩을, 콘텐츠 생성부터 도달 확보까지의 풀퍼널로 운영</p>
+          </div>
+          <div class="card__slot">
+            <span class="card__slot-key">왜</span>
+            <p class="card__slot-val">반복되는 섭외·소통을 표준화해 시간과 집중력을 아끼고, 누구나 같은 품질로 이어받을 수 있게</p>
+          </div>
+          <div class="card__slot">
+            <span class="card__slot-key">어떻게</span>
+            <p class="card__slot-val">첫 접촉부터 발행까지 단계별 메시지·가이드를 표준화하고 채널·언어·매장별로 분기 운영 / 콘텐츠가 자체 확산되면 오가닉 도달을, 그렇지 않으면 콘텐츠 광고 권한을 받아 페이드로 도달을 확보하는 두 경로를 운영</p>
+          </div>
+        </article>
+
+        <!-- 카드 2 — 데이터로 결정 돕기 -->
+        <article class="card">
+          <div class="card__label">데이터로 결정 돕기</div>
+          <div class="card__slot">
+            <span class="card__slot-key">무엇·왜</span>
+            <p class="card__slot-val">감과 경험에 기대 결정하던 일들을 데이터로 판단할 수 있게, 기입 담당에서 출발해 조직이 필요로 하는 데이터를 직접 설계하고 분석하는 역할로 넓혀갔다</p>
+          </div>
+          <div class="card__slot">
+            <span class="card__slot-key">어떻게</span>
+            <p class="card__slot-val">매출·예약·메뉴 등 흩어진 운영 데이터를 목적에 맞게 모으고 분해해, 어디에 문제가 있고 무엇을 바꿔야 하는지를 짚어 의사결정에 연결 / 메뉴 구성과 좌석 운영 등 여러 개선에 데이터로 기여</p>
+          </div>
+        </article>
+
+        <!-- 카드 3 — 채용 구조화 -->
+        <article class="card">
+          <div class="card__label">채용 구조화</div>
+          <div class="card__slot">
+            <span class="card__slot-key">무엇</span>
+            <p class="card__slot-val">채용 공고 운영을, 매체·지역별 성과 데이터로 집행을 결정하는 구조로 전환</p>
+          </div>
+          <div class="card__slot">
+            <span class="card__slot-key">왜</span>
+            <p class="card__slot-val">본래 결제 대행 수준이던 업무에서 채용 비용이 빠르게 느는 것을 발견하고, 직접 문제제기한 뒤 개선까지 실행</p>
+          </div>
+          <div class="card__slot">
+            <span class="card__slot-key">어떻게</span>
+            <p class="card__slot-val">공고 단위 성과 원장을 만들어 매체별 지원단가와 전환율을 산출 / 지역별 효율을 점수화해 "어디에 얼마를 쓸지"를 데이터로 결정 / 지원 전환율을 기준으로 공고의 디자인과 내용을 개선</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ④ 해본 일 (6줄) -->
+    <section class="did-block">
+      <h2 class="section-title">해본 일</h2>
+      <ul class="flatlist">
+        <li><span class="k">오프라인 캠페인 집행</span> — <span class="d">아파트 엘리베이터 지면 광고</span></li>
+        <li><span class="k">VIP 고객 CRM</span> — <span class="d">객단가 높은 매장의 단골 대상 혜택·메시지 운영</span></li>
+        <li><span class="k">고객 설문 설계·집행</span> — <span class="d">외국인·중국인 대상 (인지경로·선호 분석)</span></li>
+        <li><span class="k">온라인 채널 노출 관리</span> — <span class="d">매장 등록·정보 최적화 및 검색 순위 모니터링</span></li>
+        <li><span class="k">웹사이트 확장·측정 연결</span> — <span class="d">페이지 확대 및 GA4·GTM 셋업</span></li>
+        <li><span class="k">외부 업체 도입 단독 주관</span> — <span class="d">POS·QR 등 다수 업체 비교·미팅·시연</span></li>
+      </ul>
+    </section>
+
+    <!-- ⑤ 다룰 수 있는 것 (7줄) -->
+    <section class="skills-block">
+      <h2 class="section-title">다룰 수 있는 것</h2>
+      <ul class="flatlist">
+        <li><span class="k">스프레드시트</span> <span class="grade">능숙</span> <span class="d">성과 원장과 비교·분석 모델을 직접 설계</span></li>
+        <li><span class="k">디자인 툴 (일러스트레이터·포토샵·피그마)</span> <span class="grade">능숙</span> <span class="d">각종 이미지 직접 제작</span></li>
+        <li><span class="k">AI · 바이브 코딩</span> <span class="grade">적극 활용</span> <span class="d">반복 업무를 자동화하는 도구를 직접 만들어 운영</span></li>
+        <li><span class="k">문서·슬라이드 (PPT)</span> <span class="grade">활용</span> <span class="d">제안·발표 자료 제작</span></li>
+        <li><span class="k">메타 광고 매니저</span> <span class="grade">활용</span> <span class="d">정해진 예산·구조 안에서 캠페인 세팅·집행</span></li>
+        <li><span class="k">GA4 / GTM</span> <span class="grade">기초</span> <span class="d">안내에 따라 측정 환경 셋업</span></li>
+        <li><span class="k">영상 편집</span> <span class="grade">기초</span> <span class="d">기존 편집을 이어받아 마무리하는 수준</span></li>
+      </ul>
+    </section>
+
+    <!-- ⑥ 언어 (1줄, 툴과 시각적으로 분리) -->
+    <section class="lang-block">
+      <h2 class="section-title">언어</h2>
+      <div class="lang">
+        <span class="k">영어</span> — 토익 스피킹 AL · 기초 회화 가능
+      </div>
+    </section>
+
+    <!-- ⑦ 랜딩으로 돌아가기 -->
+    <nav class="back">
+      <a href="index.html">← 랜딩으로 돌아가기</a>
+    </nav>
+
+  </main>
+
+  <!-- Chart.js (CDN, 안정 버전) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>
