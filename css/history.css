@@ -130,16 +130,43 @@
 .flatlist .k { font-weight: 700; }
 .flatlist .d { color: var(--ink-soft); }
 
-/* 다룰 수 있는 것: 등급 배지 */
+/* 다룰 수 있는 것: 등급 배지
+   숙련도가 높을수록 민트(--point)에 가깝게, 낮을수록 옅고 회색 쪽으로 단계 구분.
+   능숙(진한 민트 채움) → 활용(연한 민트) → 기초(회색).
+   '적극 활용'은 순수 등급이 아니라 태도라, 능숙과 활용 사이의 외곽선 민트로 따로 둠. */
 .grade {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--point-ink);
-  background: var(--point-soft);
   padding: 1px 8px;
   border-radius: 999px;
   margin: 0 4px;
+  border: 1px solid transparent;
+}
+
+/* 능숙 — 가장 진한 민트(채움) */
+.grade--high {
+  color: #ffffff;
+  background: var(--point);
+}
+
+/* 적극 활용 — 태도 표현. 능숙·활용 사이의 외곽선 민트로 별도 톤 */
+.grade--active {
+  color: var(--point-ink);
+  background: var(--point-soft);
+  border-color: var(--point);
+}
+
+/* 활용 — 연한 민트 채움 */
+.grade--mid {
+  color: var(--point-ink);
+  background: var(--point-soft);
+}
+
+/* 기초 — 옅은 회색 */
+.grade--low {
+  color: #8a9196;
+  background: #eef0f1;
 }
 
 /* ⑥ 언어 — 툴과 시각적으로 분리 */
