@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>리멤버 경력자 공고 추천 데이터</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/recruiting.css" />
+</head>
+<body>
+  <main class="recruit">
+
+    <!-- ① 블록 제목 -->
+    <header class="recruit__header">
+      <h1 class="recruit__title">리멤버 경력자 공고 추천 데이터</h1>
+    </header>
+
+    <!-- ② 세팅 (관찰 조건) -->
+    <section class="setup">
+      <p>채용 채널을 이해하려고 리멤버에 프로필을 등록해두고 관찰했다.</p>
+      <p>등록 정보: F&amp;B 회사 마케팅팀 재직 · 직무는 브랜드/퍼포먼스/콘텐츠 마케팅·채용 · 4년제(상경계열) 졸업.</p>
+      <p>아래는 8개월간 받은 "경력자 공고 추천"을 해석 없이 집계한 숫자다.</p>
+    </section>
+
+    <!-- ③ 헤드라인 숫자 (가장 크게) -->
+    <section class="headline">
+      <span class="headline__num">149건</span>
+      <span class="headline__sub">총 149건 · 서로 다른 117곳</span>
+      <span class="headline__period">약 8개월 (2025.11 ~ 2026.06)</span>
+    </section>
+
+    <!-- ④ 정규직 87% 비율바 (순수 CSS) -->
+    <section class="ratiobar">
+      <div class="ratiobar__label">계약형태 · 정규직 87%</div>
+      <div class="ratiobar__track">
+        <div class="ratiobar__fill"></div>
+      </div>
+    </section>
+
+    <!-- ⑤ 직무 분포 도넛 차트 -->
+    <section class="donut-block">
+      <h2 class="section-title">많이 추천된 직무</h2>
+      <div class="donut-wrap">
+        <!-- Chart.js 로드되면 이 canvas에 그려진다. 미로딩 시 폴백 문구 표시 -->
+        <canvas id="donutChart"></canvas>
+        <p class="donut-fallback" id="donutFallback">차트를 불러오는 중…</p>
+      </div>
+    </section>
+
+    <!-- ⑥ 나머지 작은 텍스트 팩트 (담담하게 나열) -->
+    <section class="facts-block">
+      <ul class="facts">
+        <li><span class="k">직무 대분류</span><span class="v">· 마케팅·콘텐츠 계열 82% / HR·운영 계열 18%</span></li>
+        <li><span class="k">해외·글로벌 마케팅 포지션</span><span class="v">· 19건</span></li>
+        <li><span class="k">급여</span><span class="v">· 명시된 공고는 15%(나머지 '협의') · 명시된 경우 대체로 3천만 원대 중반 ~ 5천만 원 선</span></li>
+      </ul>
+    </section>
+
+    <!-- 돌아가기 링크 (해석/닫기 멘트 없이 이동만) -->
+    <nav class="back">
+      <a href="index.html">← 뒤로 가기</a>
+    </nav>
+
+  </main>
+
+  <!-- Chart.js (CDN, history와 동일 버전) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="js/recruiting.js"></script>
+</body>
+</html>

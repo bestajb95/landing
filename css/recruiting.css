@@ -1,0 +1,160 @@
+/* ── 채용제안 관찰 페이지 전용 스타일 ─────────────────────
+   기본 톤·색 토큰(--ink, --point 등)은 style.css를 계승.
+   콜드한 관찰 기록 톤: 장식 최소, 숫자가 주인공. 새 색은 만들지 않는다. */
+
+.recruit { padding-bottom: 72px; }
+
+/* ① 블록 제목 */
+.recruit__header {
+  padding: 48px 0 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.recruit__title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ② 세팅 (관찰 조건) — 담담하게 */
+.setup {
+  margin: 24px 0 0;
+}
+
+.setup p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.setup p:last-child { margin-bottom: 0; }
+
+/* ③ 헤드라인 숫자 — 페이지에서 가장 큰 타이포 */
+.headline {
+  margin: 40px 0 8px;
+  text-align: center;
+}
+
+.headline__num {
+  display: block;
+  font-size: 5.5rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.headline__sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.headline__period {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #a3a3a3;
+}
+
+/* ④ 정규직 87% 비율바 (순수 CSS) */
+.ratiobar { margin: 44px 0 0; }
+
+.ratiobar__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ratiobar__track {
+  position: relative;
+  width: 100%;
+  height: 28px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ratiobar__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 87%;
+  background: var(--point);
+  border-radius: 6px 0 0 6px;
+}
+
+/* ⑤ 직무 분포 도넛 */
+.donut-block { margin-top: 48px; }
+
+.section-title {
+  margin: 0 0 14px;
+  font-size: 1.0rem;
+  font-weight: 700;
+}
+
+.donut-wrap {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.donut-fallback {
+  position: absolute;
+  inset: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* ⑥ 나머지 작은 텍스트 팩트 */
+.facts {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.facts li {
+  padding: 13px 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.facts .k {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.facts .v { color: var(--ink-soft); }
+
+/* 돌아가기 링크 (해석/닫기 멘트 없이 이동만) */
+.back {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.back a {
+  color: var(--point-ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.back a:hover { text-decoration: underline; }
+
+/* ── 반응형 ─────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .headline__num { font-size: 4rem; }
+  .donut-wrap { height: 280px; }
+}
