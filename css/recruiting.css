@@ -2,11 +2,11 @@
    기본 톤·색 토큰(--ink, --point 등)은 style.css를 계승.
    콜드한 관찰 기록 톤: 장식 최소, 숫자가 주인공. 새 색은 만들지 않는다. */
 
-.recruit { padding-bottom: 72px; }
+.recruit { padding-bottom: 36px; }
 
 /* ① 블록 제목 */
 .recruit__header {
-  padding: 48px 0 8px;
+  padding: 24px 0 8px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -18,7 +18,27 @@
 
 /* ② 세팅 (관찰 조건) — 담담하게 */
 .setup {
-  margin: 24px 0 0;
+  margin: 16px 0 0;
+}
+
+/* 관찰 채널 출처 표기 (작게, 중립) */
+.source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.source__logo {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.source__caption {
+  font-size: 0.72rem;
+  color: #a3a3a3;
+  letter-spacing: 0.02em;
 }
 
 .setup p {
@@ -32,7 +52,7 @@
 
 /* ③ 헤드라인 숫자 — 페이지에서 가장 큰 타이포 */
 .headline {
-  margin: 40px 0 8px;
+  margin: 22px 0 8px;
   text-align: center;
 }
 
@@ -59,35 +79,79 @@
   color: #a3a3a3;
 }
 
-/* ④ 정규직 87% 비율바 (순수 CSS) */
-.ratiobar { margin: 44px 0 0; }
+/* ④ 계약형태 5항목 (누적 가로바 + 리스트, 순수 CSS)
+   5색은 직무 도넛과 동일 팔레트 재사용 (새 색 없음) */
+.contract { margin: 22px 0 0; }
 
-.ratiobar__label {
+.contract__label {
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
-.ratiobar__track {
-  position: relative;
+/* 누적 가로바 1줄 */
+.contract__track {
+  display: flex;
   width: 100%;
   height: 28px;
-  background: var(--bg-soft);
   border: 1px solid var(--line);
   border-radius: 6px;
   overflow: hidden;
+  background: var(--bg-soft);
 }
 
-.ratiobar__fill {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 87%;
-  background: var(--point);
-  border-radius: 6px 0 0 6px;
+.seg { display: block; height: 100%; }
+.seg--1 { background: #3ec9a7; } /* 민트(--point) */
+.seg--2 { background: #5b7c99; }
+.seg--3 { background: #b59a8f; }
+.seg--4 { background: #8d9bb0; }
+.seg--5 { background: #c7c2b8; }
+
+/* 항목 리스트 */
+.contract__list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.contract__list li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 0.88rem;
+}
+
+.dot {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  align-self: center;
+}
+.dot--1 { background: #3ec9a7; }
+.dot--2 { background: #5b7c99; }
+.dot--3 { background: #b59a8f; }
+.dot--4 { background: #8d9bb0; }
+.dot--5 { background: #c7c2b8; }
+
+.ct-label { font-weight: 700; }
+
+.ct-sub {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+/* 건수·% 를 오른쪽으로 */
+.ct-val {
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
 }
 
 /* ⑤ 직무 분포 도넛 */
-.donut-block { margin-top: 48px; }
+.donut-block { margin-top: 24px; }
 
 .section-title {
   margin: 0 0 14px;
@@ -119,7 +183,7 @@
 /* ⑥ 나머지 작은 텍스트 팩트 */
 .facts {
   list-style: none;
-  margin: 40px 0 0;
+  margin: 22px 0 0;
   padding: 0;
   border-top: 1px solid var(--line);
 }
@@ -140,7 +204,7 @@
 
 /* 돌아가기 링크 (해석/닫기 멘트 없이 이동만) */
 .back {
-  margin-top: 48px;
+  margin-top: 24px;
   text-align: center;
 }
 

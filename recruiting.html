@@ -17,6 +17,12 @@
 
     <!-- ② 세팅 (관찰 조건) -->
     <section class="setup">
+      <!-- 관찰 채널 출처 표기 (작게, 중립). 로고 파일이 아직 없으면 onerror로 숨겨 깨진 아이콘 방지 -->
+      <div class="source">
+        <img class="source__logo" src="assets/remember-logo.png" alt="리멤버"
+             onerror="this.style.display='none'" />
+        <span class="source__caption">관찰 채널</span>
+      </div>
       <p>채용 채널을 이해하려고 리멤버에 프로필을 등록해두고 관찰했다.</p>
       <p>등록 정보: F&amp;B 회사 마케팅팀 재직 · 직무는 브랜드/퍼포먼스/콘텐츠 마케팅·채용 · 4년제(상경계열) 졸업.</p>
       <p>아래는 8개월간 받은 "경력자 공고 추천"을 해석 없이 집계한 숫자다.</p>
@@ -29,12 +35,27 @@
       <span class="headline__period">약 8개월 (2025.11 ~ 2026.06)</span>
     </section>
 
-    <!-- ④ 정규직 87% 비율바 (순수 CSS) -->
-    <section class="ratiobar">
-      <div class="ratiobar__label">계약형태 · 정규직 87%</div>
-      <div class="ratiobar__track">
-        <div class="ratiobar__fill"></div>
+    <!-- ④ 계약형태 5항목 (누적 가로바 1줄 + 항목 리스트, 순수 CSS) -->
+    <section class="contract">
+      <div class="contract__label">계약형태</div>
+
+      <!-- 누적 가로바: 5색으로 비율 표시 (도넛과 같은 팔레트) -->
+      <div class="contract__track">
+        <span class="seg seg--1" style="width:87%"></span>
+        <span class="seg seg--2" style="width:6%"></span>
+        <span class="seg seg--3" style="width:5%"></span>
+        <span class="seg seg--4" style="width:2%"></span>
+        <span class="seg seg--5" style="width:1%"></span>
       </div>
+
+      <!-- 항목 리스트: 라벨 · 건수 · % (계약직 부연은 보조 텍스트) -->
+      <ul class="contract__list">
+        <li><span class="dot dot--1"></span><span class="ct-label">정규직</span><span class="ct-val">130건 · 87%</span></li>
+        <li><span class="dot dot--2"></span><span class="ct-label">일반 인턴(전환 명시 없음)</span><span class="ct-val">9건 · 6%</span></li>
+        <li><span class="dot dot--3"></span><span class="ct-label">계약직 <span class="ct-sub">— 6개월/1년 등</span></span><span class="ct-val">7건 · 5%</span></li>
+        <li><span class="dot dot--4"></span><span class="ct-label">채용 연계형 인턴(전환형)</span><span class="ct-val">3건 · 2%</span></li>
+        <li><span class="dot dot--5"></span><span class="ct-label">프리랜서</span><span class="ct-val">1건 · 1%</span></li>
+      </ul>
     </section>
 
     <!-- ⑤ 직무 분포 도넛 차트 -->
