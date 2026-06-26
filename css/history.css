@@ -181,9 +181,37 @@
 
 .lang .k { font-weight: 700; }
 
+/* 채용관찰 페이지로 연결 (제목 버튼) */
+.nextpage {
+  margin-top: 40px;
+}
+
+.nextpage__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid var(--point);
+  border-radius: 10px;
+  background: var(--point-soft);
+  color: var(--point-ink);
+  text-decoration: none;
+  font-size: 1.0rem;
+  font-weight: 700;
+  transition: background 0.15s ease;
+}
+
+.nextpage__btn:hover { background: #d8f1e9; }
+
+.nextpage__arrow {
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
 /* ⑦ 랜딩으로 돌아가기 */
 .back {
-  margin-top: 48px;
+  margin-top: 24px;
   text-align: center;
 }
 
