@@ -9,23 +9,15 @@
 <body>
   <main>
 
-    <!-- ① 히어로: 프로필 이미지 자리 + 확정 헤드라인 4줄 -->
+    <!-- ① 히어로: 프로필 사진 1장(1:1) + 소개 카피(v2) -->
     <section class="hero">
       <div class="hero__inner">
-        <!--
-          두 사진을 겹쳐 쌓고 데스크탑 호버 시 위(profile1)를 투명하게 → 아래(profile2) 노출.
-          화자가 assets/profile1.jpg, profile2.jpg 를 넣으면 바로 동작.
-          두 파일이 아직 없어도 .hero__photo 배경색(--bg-soft)이 깔려 깨진 아이콘이 흉하게 뜨지 않음.
-        -->
+        <!-- 추후 정식 사진 2장(정장/츄리닝) 확보 시 호버 전환 복원 가능 -->
         <div class="hero__photo">
-          <img class="hero__img hero__img--top" src="assets/profile1.jpg" alt="프로필" width="320" height="320" />
-          <img class="hero__img hero__img--bottom" src="assets/profile2.jpg" alt="" aria-hidden="true" width="320" height="320" />
+          <img class="hero__img" src="assets/profile1.jpg" alt="프로필" width="320" height="320" />
         </div>
         <div class="hero__copy">
-          <p>만 30, 고작 1년 조금 넘게 일한 마케터가 멀쩡한 회사 나와서 다시 시장에 섰습니다.</p>
-          <p>확신은 없습니다. 방향은 있고요.</p>
-          <p>정석대로 이직하는 대신, 일하던 방식 그대로, 취업을 업으로 대해보기로 했습니다.</p>
-          <p>잘 될지는 저도 궁금합니다. 그 과정을 하나씩 올립니다.</p>
+          <p>만 30, 퇴사한 1년차 전 F&amp;B 마케터, 현 전업 백수의 재취업을 위한 자기고용 프로젝트. 그 과정을 공유합니다.</p>
         </div>
       </div>
     </section>
@@ -49,20 +41,24 @@
       </div>
     </section>
 
-    <!-- ③ 대문 길안내: 얇은 띠, 두 줄 -->
+    <!-- ③ 영상 아래 안내: 얇은 띠, 한 줄 (담담히) -->
     <section class="guide">
-      <p>가져가 쓸 것과, 배워갈 것을 여기 모읍니다.</p>
-      <p>시작은 거의 빈손입니다. 채워지는 걸 같이 보시죠. 훈수는 언제든.</p>
+      <p>오픈소스를 원칙으로 공유할 내용이 생기면 남겨두겠습니다. 코드 등 각종 훈수 환영.</p>
     </section>
 
-    <!-- ④ 칩 A / 칩 B: 가로 2칸. 내용물 0개 → 정직한 빈 상태 -->
+    <!-- ④ 칩 A / 칩 B: 가로 2칸 -->
     <section class="chips">
-      <!-- 링크 목적지 미정 → href="#" 자리. 다음 TASK에서 실제 경로 연결 -->
-      <a class="chip" href="#">
-        <span class="chip__label">도구함</span>
-        <span class="chip__sub">코드 및 템플릿</span>
-        <span class="chip__empty">아직 비었음 / 채워지는 중</span>
-      </a>
+      <!-- 자료실 칩: 다운로드 산출물 3종. 내부에 링크가 들어가므로 칩 자체는 <a>가 아님.
+           파일이 없더라도 목록은 정상 렌더되고, 클릭 시에만 해당 파일을 받는다. -->
+      <div class="chip chip--files">
+        <span class="chip__label">자료실</span>
+        <span class="chip__sub">코드·문서·템플릿</span>
+        <ul class="chip__files">
+          <li><a href="assets/downloads/doc1.docx" download>근로계약서</a></li>
+          <li><a href="assets/downloads/doc2.docx" download>운영비예산안</a></li>
+          <li><a href="assets/downloads/doc3.docx" download>인사평가표</a></li>
+        </ul>
+      </div>
       <!-- 실무 노트 칩: 과거 이력 페이지로 연결 (내용이 생겨 채워진 상태) -->
       <a class="chip" href="history.html">
         <span class="chip__label">실무 노트</span>

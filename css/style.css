@@ -47,42 +47,31 @@ section { padding: 40px 0; }
   align-items: center;
 }
 
-/* 두 프로필 사진을 겹쳐 쌓는 컨테이너.
-   배경색을 깔아 두 jpg가 아직 없을 때 깨진 아이콘이 흉하게 뜨지 않게 한다. */
+/* 프로필 사진 1장(1:1). 배경색을 깔아 파일이 없을 때 깨진 아이콘이 흉하게 뜨지 않게 한다. */
 .hero__photo {
   flex: 0 0 auto;
-  position: relative;
-  width: 190px;
-  height: 190px;
+  width: 200px;
+  height: 200px;
   border-radius: 8px;
   background: var(--bg-soft);
   overflow: hidden;
 }
 
 .hero__img {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.hero__img--top { z-index: 2; transition: opacity 0.25s ease; } /* 위 사진 (profile1) */
-.hero__img--bottom { z-index: 1; }                              /* 아래 사진 (profile2) */
-
-/* 데스크탑 호버 시 위 사진이 사라져 아래 사진이 드러남 */
-.hero__photo:hover .hero__img--top { opacity: 0; }
-
 .hero__copy { flex: 1 1 auto; }
 
 .hero__copy p {
-  margin: 0 0 14px;
-  font-size: 1.3rem;
-  line-height: 1.7;
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.65;
 }
-
-.hero__copy p:last-child { margin-bottom: 0; }
 
 /* ── ② 영상 임베드 ────────────────────────────────────── */
 .video__frame {
@@ -179,6 +168,48 @@ section { padding: 40px 0; }
   color: #a3a3a3;
 }
 
+/* 자료실 칩: 내부 링크가 있어 카드 전체 호버 틴트는 끄고, 링크만 반응 */
+.chip--files { cursor: default; }
+.chip--files:hover {
+  border-color: var(--line);
+  background: var(--bg);
+}
+
+.chip__files {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.chip__files li { margin-top: 6px; }
+.chip__files li:first-child { margin-top: 0; }
+
+.chip__files a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--point-ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+/* 다운로드 아이콘(↓) — 순수 문자, 이미지 리소스 없이 */
+.chip__files a::before {
+  content: "↓";
+  font-size: 0.8rem;
+  color: var(--point);
+}
+
+.chip__files a:hover {
+  border-color: var(--point);
+  background: var(--point-soft);
+}
+
 /* ── ⑤ 위젯 자리 ─────────────────────────────────────── */
 .widget {
   text-align: center;
@@ -214,14 +245,11 @@ section { padding: 40px 0; }
 
 .channel:hover { background: var(--point-ink); }
 
-/* ── 모바일: 히어로 세로 배치 + 프로필 한 장(profile1)만 고정 ── */
+/* ── 모바일: 히어로 세로 배치 ── */
 @media (max-width: 560px) {
   .hero__inner { flex-direction: column; text-align: center; }
   .hero__photo { width: 170px; height: 170px; }
-  .hero__copy p { font-size: 1.12rem; }
-  .chips { grid-template-columns: 1fr 1fr; }
-
-  /* 폰엔 호버가 없으므로 아래 사진을 숨기고 전환 효과도 끈다 (profile1만 표시) */
-  .hero__img--bottom { display: none; }
-  .hero__photo:hover .hero__img--top { opacity: 1; }
+  .hero__copy p { font-size: 1.15rem; }
+  /* 자료실 칩에 파일 목록이 생겨 폰에선 칩을 세로 1열로 */
+  .chips { grid-template-columns: 1fr; }
 }
