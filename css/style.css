@@ -73,6 +73,9 @@ section { padding: 40px 0; }
   line-height: 1.65;
 }
 
+/* 문단 사이 빈 줄 간격 */
+.hero__copy p + p { margin-top: 1.1em; }
+
 /* ── ② 영상 임베드 ────────────────────────────────────── */
 .video__frame {
   position: relative;
