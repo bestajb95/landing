@@ -26,6 +26,39 @@ main.meta { max-width: 920px; }
   color: var(--ink-soft);
 }
 
+/* 받은 검사 3종 — 출처 표기 수준. 가격은 각주급(작고 연하게) */
+.tests { margin-top: 18px; }
+
+.tests__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.tests__list li {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  padding: 10px 2px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tests__name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--point-ink);
+  text-decoration: none;
+}
+
+.tests__name:hover { text-decoration: underline; }
+
+.tests__price {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+}
+
 /* 섹션 제목 */
 .section-title {
   margin: 44px 0 6px;
