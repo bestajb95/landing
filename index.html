@@ -50,22 +50,21 @@
 
     <!-- ④ 칩 A / 칩 B: 가로 2칸 -->
     <section class="chips">
-      <!-- 자료실 칩: 다운로드 산출물 3종. 내부에 링크가 있어 칩 자체는 <a>가 아님. -->
-      <div class="chip chip--files">
+      <!-- 자료실 칩: 자료실 메뉴로 연결 (파일 3종은 downloads.html 로 이동) -->
+      <a class="chip chip--link" href="library.html">
         <span class="chip__label">자료실</span>
         <span class="chip__sub">코드·문서·템플릿</span>
-        <ul class="chip__files">
-          <li><a href="assets/downloads/doc1.docx" download>근로계약서</a></li>
-          <li><a href="assets/downloads/doc2.docx" download>운영비예산안</a></li>
-          <li><a href="assets/downloads/doc3.docx" download>인사평가표</a></li>
-        </ul>
-      </div>
-      <!-- 실무 노트 칩: 과거 이력 페이지로 연결 -->
-      <a class="chip chip--link" href="history.html">
-        <span class="chip__label">실무 노트</span>
-        <span class="chip__sub">마케팅 현장 기록</span>
-        <span class="chip__empty">과거 이력 보기<span class="chip__arrow">→</span></span>
+        <span class="chip__empty">가져가 쓰기<span class="chip__arrow">→</span></span>
       </a>
+      <!-- about 전업백수 칩: 컨테이너 + 버튼 2개로 두 페이지 분기 (칩 바깥은 링크 아님) -->
+      <div class="chip chip--hub">
+        <span class="chip__label">about 전업백수</span>
+        <span class="chip__sub">나를 뜯어본 기록</span>
+        <div class="chip__buttons">
+          <a class="chip__btn" href="history.html">과거이력 (+리멤버 데이터)<span class="chip__arrow">→</span></a>
+          <a class="chip__btn" href="metacog.html">메타인지 검사 결과<span class="chip__arrow">→</span></a>
+        </div>
+      </div>
     </section>
 
     <!-- ⑤ 위젯 자리: 밋밋한 흔적만 -->

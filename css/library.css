@@ -1,0 +1,152 @@
+/* ── 자료실 영역 전용 스타일 (library.html · downloads.html 공용) ──
+   기본 톤·색 토큰은 style.css를 계승. 새 색은 만들지 않는다. */
+
+.lib { padding: 48px 0 72px; }
+
+/* 페이지 헤더 */
+.lib__header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lib__title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.lib__lead {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.lib__note {
+  margin: 12px 0 0;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ── 자료실 메뉴 (library.html) ─────────────────────────── */
+.menu {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.menu__item:hover {
+  border-color: var(--point);
+  background: var(--point-soft);
+}
+
+.menu__body { flex: 1 1 auto; }
+
+.menu__name {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.menu__desc {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.8rem;
+  color: var(--muted-2);
+}
+
+.menu__arrow {
+  flex: 0 0 auto;
+  color: var(--point-ink);
+  font-weight: 700;
+}
+
+/* 정직한 빈 상태 — 앞으로 채워질 자리 */
+.menu__empty {
+  padding: 18px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--muted-2);
+  text-align: center;
+}
+
+/* ── 다운로드 목록 (downloads.html) ─────────────────────── */
+.dl-list {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dl-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+/* 다운로드 아이콘(↓) — 이미지 리소스 없이 */
+.dl-list a::before {
+  content: "↓";
+  flex: 0 0 auto;
+  color: var(--point);
+  font-size: 0.9rem;
+}
+
+.dl-list a:hover {
+  border-color: var(--point);
+  background: var(--point-soft);
+}
+
+.dl-list .dl__ext {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--muted-2);
+}
+
+/* ── 하단 이동 링크 ─────────────────────────────────────── */
+.back {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.back a {
+  color: var(--point-ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.back a:hover { text-decoration: underline; }

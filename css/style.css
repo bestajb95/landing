@@ -147,31 +147,35 @@ main {
 .chip__label { font-size: 15px; font-weight: 600; color: var(--ink); }
 .chip__sub   { font-size: 12.5px; color: var(--muted-2); margin-top: 3px; }
 
-.chip__files {
-  list-style: none;
-  margin: 18px 0 0;
-  padding: 0;
+/* about 허브 칩: 칩 바깥은 링크가 아니고, 안의 버튼 2개가 각각의 링크.
+   버튼을 하단(margin-top:auto)에 붙여 옆 칩의 CTA와 높이를 맞춘다. */
+.chip__buttons {
+  margin-top: auto;
+  padding-top: 22px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
-.chip__files a {
-  font-size: 14px;
-  color: #4A453D;
-  display: inline-flex;
+.chip__btn {
+  display: flex;
   align-items: center;
-  gap: 7px;
-  transition: color 0.15s;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 11px 12px;
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: var(--accent);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: border-color 0.15s, background 0.15s;
 }
-.chip__files a::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #C6BFB2;
-  flex: none;
+.chip__btn:hover {
+  border-color: var(--accent);
+  background: var(--point-soft);
 }
-.chip__files a:hover { color: var(--accent); }
+.chip__btn .chip__arrow { font-size: 13px; flex: none; }
 
 .chip--link { transition: border-color 0.15s, background 0.15s; }
 .chip--link:hover { border-color: #C9C1B2; background: #FFFFFF; }
