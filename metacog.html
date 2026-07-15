@@ -343,6 +343,9 @@
     <section class="raw" id="raw-gallup">
       <h2 class="section-title">갤럽 CliftonStrengths TOP5 원본</h2>
 
+      <!-- 추천 블록: 결과보다 먼저 -->
+      <p class="rec">추천: 세계적으로 알려진 검사라, 면접에서 장단점 질문이 나올 때 "갤럽 강점 검사로 분석한 제 강점은…"이라고 답하면 신뢰도를 더할 수 있다.</p>
+
       <!-- 전략적 사고 — 4개가 몰려 있음이 한눈에 보이게 -->
       <div class="gallup">
         <div class="gallup__head">
@@ -406,6 +409,10 @@
     <section class="raw" id="raw-waymark">
       <h2 class="section-title">웨이마크(Waymark) 원본</h2>
 
+      <!-- 추천 블록: 결과보다 먼저.
+           "퇴직·이직 앞둔 분"은 검사 추천 대상 설명이지 화자 상태 서술이 아님(탈의료화 위반 아님). -->
+      <p class="rec">추천: 번아웃 등으로 퇴직·이직 같은 중요한 결정을 앞둔 직장인이라면 받아볼 만하다. 상담이 짧은 건 아쉽지만, 내 이야기를 먼저 듣고 진행돼 더 개인화된 조언을 들을 수 있다. (비싸서 그렇지…)</p>
+
       <!-- A. 추구하는 핵심 가치 (전체 6개 중 상위 2개만) -->
       <h3 class="raw__sub">추구하는 핵심 가치 (TOP2)</h3>
       <ul class="way-list">
@@ -467,12 +474,22 @@
       <!-- C. 선호하는 조직문화 — 개인 성향 비율만. 원본 사분면 레이더 대신 막대로 재구성 -->
       <h3 class="raw__sub">선호하는 조직문화</h3>
       <p class="raw__notice">중심 문화 · 혁신</p>
-      <div class="mbars">
-        <div class="mbar"><span class="mbar__label">혁신</span><span class="mbar__track"><span class="mbar__fill" style="--v:32"></span></span><span class="mbar__val">32%</span></div>
-        <div class="mbar"><span class="mbar__label">목적</span><span class="mbar__track"><span class="mbar__fill" style="--v:29"></span></span><span class="mbar__val">29%</span></div>
-        <div class="mbar"><span class="mbar__label">협력</span><span class="mbar__track"><span class="mbar__fill" style="--v:21"></span></span><span class="mbar__val">21%</span></div>
-        <div class="mbar"><span class="mbar__label">체계</span><span class="mbar__track"><span class="mbar__fill" style="--v:17"></span></span><span class="mbar__val">17%</span></div>
+      <!-- 네 요소가 전체(100%)를 나눠 갖는 구조 → 막대 하나에 누적.
+           flex-grow로 값에 비례 분할해 반올림 오차(합 99%) 없이 꽉 채운다.
+           원본 사분면 레이더는 재현하지 않음. -->
+      <div class="stack">
+        <span class="stack__seg seg--c1" style="flex-grow:32"></span>
+        <span class="stack__seg seg--c2" style="flex-grow:29"></span>
+        <span class="stack__seg seg--c3" style="flex-grow:21"></span>
+        <span class="stack__seg seg--c4" style="flex-grow:17"></span>
       </div>
+      <ul class="stack__legend">
+        <li><span class="lgd-dot seg--c1"></span>혁신 <b>32%</b></li>
+        <li><span class="lgd-dot seg--c2"></span>목적 <b>29%</b></li>
+        <li><span class="lgd-dot seg--c3"></span>협력 <b>21%</b></li>
+        <li><span class="lgd-dot seg--c4"></span>체계 <b>17%</b></li>
+      </ul>
+      <p class="stack__note">반올림으로 표기 합계는 99%입니다.</p>
 
       <h4 class="raw__group">나와 잘 맞는 조직</h4>
       <ul class="way-flat">
