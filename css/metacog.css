@@ -329,26 +329,41 @@ main.meta { max-width: 920px; }
   line-height: 1.4;
 }
 
-/* ── 아코디언 (평소 접힘, 제목만) ───────────────────────── */
-.acc {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  margin-bottom: 8px;
+/* ── 추천 블록 (raw 결과보다 먼저, 데이터와 시각적으로 구분) ── */
+.rec {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--point);
+  border-radius: 0 8px 8px 0;
+  background: var(--point-soft);
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
 }
 
-.acc summary {
-  cursor: pointer;
-  padding: 11px 14px;
-  font-size: 0.85rem;
+/* ── 세부 항목 (제목만, 태그형 박스 나열 — 토글 없음) ───── */
+.chipset { margin-bottom: 14px; }
+
+.chipset__title {
+  font-size: 0.8rem;
   font-weight: 700;
+  margin-bottom: 7px;
 }
 
-.acc__list {
-  margin: 0;
-  padding: 0 14px 12px 32px;
-  font-size: 0.82rem;
-  line-height: 1.7;
+.chipset__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.rchip {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.76rem;
+  line-height: 1.4;
   color: var(--ink-soft);
 }
 
