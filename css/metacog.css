@@ -449,8 +449,153 @@ main.meta { max-width: 920px; }
   color: var(--ink-soft);
 }
 
+/* ── 웨이마크 ───────────────────────────────────────────
+   순위·이름·요약 프리미티브(.grank/.gbody/.gname/.gsum)는 갤럽과 공용. */
+.way-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.way-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.way-list li:last-child { border-bottom: 0; }
+
+/* 강점/보완 태그 */
+.tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.tag--strong { background: var(--point); color: #fff; }
+.tag--fill {
+  background: var(--point-soft);
+  color: var(--point-ink);
+  border: 1px solid var(--point);
+}
+
+/* 나와 잘 맞는 조직 (4줄) */
+.way-flat {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.way-flat li {
+  padding: 11px 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.way-flat .k { font-weight: 700; color: var(--ink); }
+
+/* 비율/점수 막대 (원본 레이더·비교표 대신 단순 막대로 재구성) */
+.mbars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+}
+
+.mbar__label {
+  flex: 0 0 auto;
+  width: 64px;
+  font-weight: 700;
+}
+
+.mbar__track {
+  flex: 1 1 auto;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.mbar__fill {
+  display: block;
+  height: 100%;
+  width: calc(var(--v) * 1%);
+  background: var(--point);
+  border-radius: 999px;
+}
+
+.mbar__val {
+  flex: 0 0 auto;
+  width: 38px;
+  text-align: right;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 직무 적합도 13위 (상위 3위 강조) */
+.jobs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 16px;
+}
+
+.jobs li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.job__rank {
+  flex: 0 0 auto;
+  width: 18px;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted-2);
+}
+
+/* 상위 3위 */
+.jobs .job--top {
+  border-color: var(--point);
+  background: var(--point-soft);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.jobs .job--top .job__rank { color: var(--point-ink); }
+
 /* ── 반응형 ─────────────────────────────────────────────── */
 @media (max-width: 560px) {
   .closing { font-size: 0.95rem; }
   .gauges { grid-template-columns: repeat(2, 1fr); }
+  .jobs { grid-template-columns: 1fr; }
+  .mbar__label { width: 56px; }
 }
