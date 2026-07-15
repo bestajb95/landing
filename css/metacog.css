@@ -352,6 +352,103 @@ main.meta { max-width: 920px; }
   color: var(--ink-soft);
 }
 
+/* ── 갤럽 TOP5 (테마 그룹핑) ────────────────────────────── */
+.gallup {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+/* 그룹 헤더 — 테마가 한눈에 드러나게 */
+.gallup__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 14px;
+  background: var(--point-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.gallup__theme {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--point-ink);
+}
+
+.gallup__en {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+/* 개수 배지 — "전략적 사고 4 / 대인관계 1" 대비가 보이게 */
+.gallup__count {
+  flex: 0 0 auto;
+  min-width: 20px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--point);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.gallup__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gallup__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.gallup__list li:last-child { border-bottom: 0; }
+
+/* 순위 배지 */
+.grank {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--point);
+  color: var(--point-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.gbody { flex: 1 1 auto; }
+
+.gname {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.gname__en {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted-2);
+}
+
+.gsum {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
 /* ── 반응형 ─────────────────────────────────────────────── */
 @media (max-width: 560px) {
   .closing { font-size: 0.95rem; }
