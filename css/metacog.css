@@ -160,17 +160,6 @@ main.meta { max-width: 920px; }
 /* 약점 표: 마지막 행 보완칸(미해결) 살짝 구분 */
 .unresolved { color: var(--ink-soft); font-style: italic; }
 
-/* ⑤ 착지 문구 */
-.closing {
-  margin: 48px 0 0;
-  padding: 24px 22px;
-  background: var(--point-soft);
-  border: 1px solid var(--point);
-  border-radius: 10px;
-  font-size: 1.02rem;
-  line-height: 1.75;
-}
-
 /* ⑥ history 로 가는 버튼 */
 .nextpage { margin-top: 28px; }
 
@@ -666,7 +655,6 @@ main.meta { max-width: 920px; }
 
 /* ── 반응형 ─────────────────────────────────────────────── */
 @media (max-width: 560px) {
-  .closing { font-size: 0.95rem; }
   .gauges { grid-template-columns: repeat(2, 1fr); }
   .jobs { grid-template-columns: 1fr; }
   .mbar__label { width: 56px; }
