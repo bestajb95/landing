@@ -331,7 +331,37 @@ main.meta { max-width: 920px; }
 }
 
 /* ── 세부 항목 (제목만, 태그형 박스 나열 — 토글 없음) ───── */
-.chipset { margin-bottom: 14px; }
+
+/* 구간(커리어 패스·개인적 성장·인간관계)을 보조선+여백으로 확실히 분리 */
+.chipgroup {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+/* 구간 제목: 클레이 틱 + 진한 색으로 묶음 소제목보다 위계를 높임 */
+.chipgroup__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--point-ink);
+}
+
+.chipgroup__title::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--point);
+}
+
+/* 묶음(강점·약점 등) 사이 간격 — 구간 간격(30px)보다 확실히 좁게 */
+.chipset { margin-bottom: 16px; }
+.chipset:last-child { margin-bottom: 0; }
 
 .chipset__title {
   font-size: 0.8rem;
