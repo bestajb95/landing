@@ -47,7 +47,7 @@
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--bg);
+  background: var(--surface);
 }
 
 .chart-note {
@@ -81,7 +81,7 @@
   padding: 20px 18px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--bg);
+  background: var(--surface);
 }
 
 /* 카드 상단 민트 띠 (포인트 절제 사용) */

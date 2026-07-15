@@ -1,258 +1,221 @@
-/* ── 기본 톤 ──────────────────────────────────────────── */
+/* ============================================================
+   취업을 업으로 — 사이트 공통 스타일
+   폰트: Pretendard / 톤: 따뜻한 뉴트럴 + 절제된 클레이 포인트
+   ------------------------------------------------------------
+   랜딩(index)은 .landing 레이아웃을 쓰고,
+   서브페이지(history/recruiting/metacog)는 각자의 css와 함께
+   아래 :root 토큰·body·일반 main 규칙을 공유한다.
+   레거시 토큰(--point*, --line, --bg-soft, --max)은 새 팔레트로 매핑.
+   ============================================================ */
+
 :root {
-  /* 흑백 기반 토큰 */
-  --ink: #1c1c1c;
-  --ink-soft: #6b6b6b;
-  --line: #e3e3e3;
-  --bg: #ffffff;
-  --bg-soft: #f6f6f4;
-  --accent: #1c1c1c;
+  /* 새 팔레트 */
+  --bg:        #F4F1EB;  /* 종이빛 배경 */
+  --surface:   #FBFAF6;  /* 카드 표면 */
+  --ink:       #26231F;  /* 본문/강조 텍스트 */
+  --ink-soft:  #3B3730;  /* 리드/보조 텍스트 */
+  --muted:     #8C877D;  /* 안내 문구 */
+  --muted-2:   #A29C90;  /* 서브 라벨 */
+  --hair:      #E1DBD0;  /* 경계선 */
+  --accent:    #B0552F;  /* 클레이 포인트(링크·화살표) */
+  --dot:       #C9A16B;  /* 위젯 상태 점 */
 
-  /* 포인트 컬러 (민트) — 추후 퍼스널컬러 진단 후 이 값만 교체.
-     색은 반드시 이 변수들로만 쓰고 어디에도 하드코딩하지 않는다. */
-  --point: #3ec9a7;        /* 민트 본색 */
-  --point-soft: #e6f7f1;   /* 민트 연한 배경용 */
-  --point-ink: #16a085;    /* 민트 위 텍스트/진한 변형 (호버 등) */
+  --maxw:      600px;    /* 랜딩 폭 */
+  --radius:    14px;
 
-  --max: 720px;
+  /* 레거시 호환 토큰 (서브페이지 css가 참조) → 새 팔레트로 매핑 */
+  --line:       var(--hair);   /* 경계선 */
+  --bg-soft:    var(--surface);/* 연한 표면 */
+  --max:        720px;         /* 서브페이지 기본 폭 */
+  --point:      var(--accent); /* 구 민트 강조 → 클레이 */
+  --point-soft: #EFDFD8;       /* 클레이 연한 배경 */
+  --point-ink:  #8A3F1E;       /* 클레이 진한 변형(텍스트) */
 }
 
 * { box-sizing: border-box; }
-
-html { -webkit-text-size-adjust: 100%; }
+html, body { margin: 0; padding: 0; }
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo",
-    "Malgun Gothic", sans-serif;
-  color: var(--ink);
   background: var(--bg);
-  line-height: 1.6;
+  color: var(--ink);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
 }
 
+a { color: inherit; text-decoration: none; }
+
+/* 서브페이지 기본 컨테이너 */
 main {
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 20px;
 }
 
-section { padding: 40px 0; }
+/* ============================================================
+   랜딩(index) 전용 — .landing 스코프
+   ============================================================ */
+.landing {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 96px 28px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 84px;               /* 섹션 간 여백 */
+}
 
-/* ── ① 히어로 (능청·여유: 큰 글씨 + 넉넉한 여백) ─────────── */
-.hero { padding-top: 72px; padding-bottom: 56px; }
-
+/* ① 히어로 -------------------------------------------------- */
 .hero__inner {
   display: flex;
-  gap: 36px;
+  flex-direction: column;
   align-items: center;
+  gap: 34px;
 }
-
-/* 프로필 사진 1장(1:1). 배경색을 깔아 파일이 없을 때 깨진 아이콘이 흉하게 뜨지 않게 한다. */
 .hero__photo {
-  flex: 0 0 auto;
-  width: 200px;
-  height: 200px;
-  border-radius: 8px;
-  background: var(--bg-soft);
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
   overflow: hidden;
+  border: 1px solid var(--hair);
+  background: #E7E2D8;
 }
-
 .hero__img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  display: block;
 }
-
-.hero__copy { flex: 1 1 auto; }
-
-.hero__copy p {
-  margin: 0;
-  font-size: 1.35rem;
-  line-height: 1.65;
+.hero__copy {
+  text-align: center;
+  font-size: 18px;
+  line-height: 2.05;
+  text-wrap: pretty;
 }
+.hero__lead   { margin: 0 0 22px; color: var(--ink-soft); }
+.hero__strong { margin: 0; color: var(--ink); font-weight: 600; }
 
-/* 문단 사이 빈 줄 간격 */
-.hero__copy p + p { margin-top: 1.1em; }
-
-/* ── ② 영상 임베드 ────────────────────────────────────── */
+/* ② 영상 -------------------------------------------------- */
 .video__frame {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: var(--bg-soft);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #E7E2D8;
+  box-shadow: 0 1px 3px rgba(38, 35, 31, 0.06);
 }
-
-/* aspect-ratio 미지원 브라우저용 폴백 */
-@supports not (aspect-ratio: 16 / 9) {
-  .video__frame { padding-top: 56.25%; }
-  .video__frame .video__label {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
 .video__frame iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 8px;
 }
 
-.video__label {
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-}
-
-/* ── ③ 대문 길안내 (얇은 띠) ──────────────────────────── */
-.guide {
-  padding: 18px 20px;
-  background: var(--bg-soft);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  text-align: center;
-}
-
+/* ③ 안내 -------------------------------------------------- */
+.guide { text-align: center; }
 .guide p {
   margin: 0;
-  font-size: 0.98rem;
-  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--muted);
+  letter-spacing: 0;
 }
 
-/* ── ④ 칩 A / 칩 B (가로 2칸) ─────────────────────────── */
+/* ④ 칩 ---------------------------------------------------- */
 .chips {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
-
-/* 칩 (실무·밀도: 히어로보다 한 단계 작고 단정하게) */
 .chip {
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  padding: 22px;
+  background: var(--surface);
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 18px 18px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--bg);
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.15s ease, background 0.15s ease;
 }
-
-/* 호버 시 회색 대신 민트 테두리로 살짝 반응 */
-.chip:hover {
-  border-color: var(--point);
-  background: var(--point-soft);
-}
-
-.chip__label {
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
-.chip__sub {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-}
-
-.chip__empty {
-  margin-top: 10px;
-  font-size: 0.75rem;
-  color: #a3a3a3;
-}
-
-/* 자료실 칩: 내부 링크가 있어 카드 전체 호버 틴트는 끄고, 링크만 반응 */
-.chip--files { cursor: default; }
-.chip--files:hover {
-  border-color: var(--line);
-  background: var(--bg);
-}
+.chip__label { font-size: 15px; font-weight: 600; color: var(--ink); }
+.chip__sub   { font-size: 12.5px; color: var(--muted-2); margin-top: 3px; }
 
 .chip__files {
   list-style: none;
-  margin: 12px 0 0;
+  margin: 18px 0 0;
   padding: 0;
-}
-
-.chip__files li { margin-top: 6px; }
-.chip__files li:first-child { margin-top: 0; }
-
-.chip__files a {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chip__files a {
+  font-size: 14px;
+  color: #4A453D;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.15s;
+}
+.chip__files a::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #C6BFB2;
+  flex: none;
+}
+.chip__files a:hover { color: var(--accent); }
+
+.chip--link { transition: border-color 0.15s, background 0.15s; }
+.chip--link:hover { border-color: #C9C1B2; background: #FFFFFF; }
+.chip__empty {
+  margin-top: auto;
+  padding-top: 30px;
+  font-size: 13px;
+  color: var(--accent);
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 10px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--point-ink);
-  text-decoration: none;
-  transition: border-color 0.15s ease, background 0.15s ease;
 }
+.chip__arrow { font-size: 15px; }
 
-/* 다운로드 아이콘(↓) — 순수 문자, 이미지 리소스 없이 */
-.chip__files a::before {
-  content: "↓";
-  font-size: 0.8rem;
-  color: var(--point);
-}
-
-.chip__files a:hover {
-  border-color: var(--point);
-  background: var(--point-soft);
-}
-
-/* ── ⑤ 위젯 자리 ─────────────────────────────────────── */
-.widget {
-  text-align: center;
-  padding: 28px 0;
-}
-
+/* ⑤ 위젯 -------------------------------------------------- */
+.widget { text-align: center; }
 .widget__note {
   margin: 0;
-  font-size: 0.9rem;
-  color: #a3a3a3;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #B8B2A6;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.widget__note::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dot);
 }
 
-/* ── ⑥ 채널 링크 (가장 또렷하게) ─────────────────────── */
+/* ⑥ 채널 -------------------------------------------------- */
 .channels {
   display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-bottom: 64px;
+  flex-direction: column;
+  gap: 12px;
 }
-
-/* 채널 버튼: 아래쪽이지만 예외적으로 다시 또렷하게 (민트) — 최종 목적지 */
 .channel {
-  padding: 14px 28px;
-  background: var(--point);
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 700;
-  border-radius: 999px;
-  transition: background 0.15s ease;
+  border: 1px solid var(--ink);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
 }
-
-.channel:hover { background: var(--point-ink); }
-
-/* ── 모바일: 히어로 세로 배치 ── */
-@media (max-width: 560px) {
-  .hero__inner { flex-direction: column; text-align: center; }
-  .hero__photo { width: 170px; height: 170px; }
-  .hero__copy p { font-size: 1.15rem; }
-  /* 자료실 칩에 파일 목록이 생겨 폰에선 칩을 세로 1열로 */
-  .chips { grid-template-columns: 1fr; }
+.channel:hover {
+  background: var(--ink);
+  color: var(--bg);
 }

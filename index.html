@@ -4,33 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>취업을 업으로 — 기록</title>
+  <!-- Pretendard (오픈소스 웹폰트, jsDelivr CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <main>
+  <main class="landing">
 
-    <!-- ① 히어로: 프로필 사진 1장(1:1) + 소개 카피(v2) -->
+    <!-- ① 히어로: 프로필 사진 1장(1:1) + 소개 카피 -->
     <section class="hero">
       <div class="hero__inner">
         <!-- 추후 정식 사진 2장(정장/츄리닝) 확보 시 호버 전환 복원 가능 -->
         <div class="hero__photo">
-          <img class="hero__img" src="assets/profile1.jpg" alt="프로필" width="320" height="320" />
+          <img class="hero__img" src="assets/profile1.jpg" alt="프로필" width="148" height="148" />
         </div>
         <div class="hero__copy">
-          <p>만 30살(곧 31),<br />퇴사한 1년차 전 F&amp;B 마케터,<br />현 전업 백수의</p>
-          <p>재취업을 위한 자기고용 프로젝트.<br />그 과정을 공유합니다.</p>
+          <p class="hero__lead">만 30살(곧 31),<br />퇴사한 1년차 전 F&amp;B 마케터,<br />현 전업 백수의</p>
+          <p class="hero__strong">재취업을 위한 자기고용 프로젝트.<br />그 과정을 공유합니다.</p>
         </div>
       </div>
     </section>
 
-    <!-- ② 영상 임베드: 유튜브 iframe -->
+    <!-- ② 영상 임베드 -->
     <section class="video">
       <div class="video__frame">
         <!--
-          ⚠ 임시 테스트 영상(M7lc1UVf-VE) — 비율·레이아웃 검증용.
-          구글 공식 YouTube IFrame API 문서의 임베드 데모 영상이라 외부 임베드가 안정적으로 허용됨.
-          (직전의 aqz-KE-bpKQ/Big Buck Bunny는 오류 153 — 소유자 외부 임베드 차단으로 교체)
-          발행 시 아래 embed/ 뒤의 ID를 실제 1화 영상 ID로 교체할 것.
+          ⚠ 임시 테스트 영상(M7lc1UVf-VE). 발행 시 아래 embed/ 뒤의 ID를 실제 1화 영상 ID로 교체할 것.
           반드시 embed/ 경로 형태 유지 (watch?v= 형태는 임베드 안 됨).
         -->
         <iframe
@@ -42,15 +41,14 @@
       </div>
     </section>
 
-    <!-- ③ 영상 아래 안내: 얇은 띠, 한 줄 (담담히) -->
+    <!-- ③ 영상 아래 안내: 얇은 띠, 한 줄 -->
     <section class="guide">
       <p>오픈소스를 원칙으로 공유할 내용이 생기면<br />남겨두겠습니다. 코드 등 각종 훈수 환영</p>
     </section>
 
     <!-- ④ 칩 A / 칩 B: 가로 2칸 -->
     <section class="chips">
-      <!-- 자료실 칩: 다운로드 산출물 3종. 내부에 링크가 들어가므로 칩 자체는 <a>가 아님.
-           파일이 없더라도 목록은 정상 렌더되고, 클릭 시에만 해당 파일을 받는다. -->
+      <!-- 자료실 칩: 다운로드 산출물 3종. 내부에 링크가 있어 칩 자체는 <a>가 아님. -->
       <div class="chip chip--files">
         <span class="chip__label">자료실</span>
         <span class="chip__sub">코드·문서·템플릿</span>
@@ -60,15 +58,15 @@
           <li><a href="assets/downloads/doc3.docx" download>인사평가표</a></li>
         </ul>
       </div>
-      <!-- 실무 노트 칩: 과거 이력 페이지로 연결 (내용이 생겨 채워진 상태) -->
-      <a class="chip" href="history.html">
+      <!-- 실무 노트 칩: 과거 이력 페이지로 연결 -->
+      <a class="chip chip--link" href="history.html">
         <span class="chip__label">실무 노트</span>
         <span class="chip__sub">마케팅 현장 기록</span>
-        <span class="chip__empty">과거 이력 보기</span>
+        <span class="chip__empty">과거 이력 보기<span class="chip__arrow">→</span></span>
       </a>
     </section>
 
-    <!-- ⑤ 위젯 자리: 밋밋한 흔적만. 숫자·그래프·급여 표현 금지 -->
+    <!-- ⑤ 위젯 자리: 밋밋한 흔적만 -->
     <section class="widget">
       <p class="widget__note">성과 추적 중</p>
     </section>
