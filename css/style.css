@@ -71,6 +71,14 @@ main {
   align-items: center;
   gap: 34px;
 }
+/* 캘리그래피(배경 없는 PNG) — 프로필 위, 담담한 크기 */
+.hero__calligraphy {
+  display: block;
+  width: auto;
+  max-width: 260px;
+  height: auto;
+  background: transparent;
+}
 .hero__photo {
   width: 148px;
   height: 148px;
