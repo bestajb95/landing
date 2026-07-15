@@ -3,6 +3,9 @@
    담담한 검증 기록 톤. 표가 주인공. 새 색은 만들지 않는다
    (동의도 아이콘도 민트/그레이 범위 안에서만). */
 
+/* 앵커 점프를 부드럽게 (위 검사명 → 하단 raw) */
+html { scroll-behavior: smooth; }
+
 /* 표가 넓어 이 페이지만 본문 폭을 조금 넓힘 */
 main.meta { max-width: 920px; }
 
@@ -206,7 +209,151 @@ main.meta { max-width: 920px; }
 
 .back a:hover { text-decoration: underline; }
 
+/* ══ 검사 원본(raw) 섹션 ═══════════════════════════════════
+   위=정제본 / 아래=날것. 5축 막대 색만 예외적으로 검사 고유색 사용. */
+.raw {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 2px solid var(--line);
+  scroll-margin-top: 24px;
+}
+
+.raw__notice {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.raw__sub {
+  margin: 32px 0 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.raw__group {
+  margin: 22px 0 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--point-ink);
+}
+
+/* ── 5축 막대 ───────────────────────────────────────────── */
+.axes {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.axis__head {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--axis);
+  margin-bottom: 6px;
+}
+
+.axis__track {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--axis-soft);
+}
+
+.axis__marker {
+  position: absolute;
+  top: 50%;
+  left: var(--pos);
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--axis);
+  border: 2px solid var(--surface);
+}
+
+.axis__ends {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.72rem;
+  color: var(--muted-2);
+}
+
+/* ── 원형 게이지 12개 ───────────────────────────────────── */
+.gauges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gauge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.gauge {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  /* --v = 퍼센트 값(숫자) */
+  background: conic-gradient(var(--point) calc(var(--v) * 1%), var(--line) 0);
+}
+
+.gauge::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.gauge__num {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.gauge__label {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+/* ── 아코디언 (평소 접힘, 제목만) ───────────────────────── */
+.acc {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  margin-bottom: 8px;
+}
+
+.acc summary {
+  cursor: pointer;
+  padding: 11px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.acc__list {
+  margin: 0;
+  padding: 0 14px 12px 32px;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
 /* ── 반응형 ─────────────────────────────────────────────── */
 @media (max-width: 560px) {
   .closing { font-size: 0.95rem; }
+  .gauges { grid-template-columns: repeat(2, 1fr); }
 }

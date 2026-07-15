@@ -21,7 +21,8 @@
     <section class="tests">
       <ul class="tests__list">
         <li>
-          <a class="tests__name" href="https://www.16personalities.com/ko" target="_blank" rel="noopener">16Personalities (통칭 MBTI)</a>
+          <!-- 클릭 시 하단 MBTI raw 섹션으로 점프 -->
+          <a class="tests__name" href="#raw-mbti">16Personalities (통칭 MBTI)</a>
           <span class="tests__price">프리미엄 리포트 7,900원</span>
         </li>
         <li>
@@ -182,6 +183,117 @@
     <!-- ⑤ [3단] 착지 문구 -->
     <section class="closing-block">
       <p class="closing">마케터로 시작해서, 크리에이터로 판을 직접 만들고, AI로 일하는 방식을 재설계했습니다. 다양한 정보를 배우고 수집한 다음, 열린 관점으로 연결합니다. 그렇게 만들어진 아이디어로 새 판을 짭니다.</p>
+    </section>
+
+    <!-- ══ 검사 원본(raw) — MBTI ══════════════════════════════
+         위쪽은 정제·검증한 결론 / 아래는 검사 날것. 이 대비가 의도.
+         NERIS 저작권 보호를 위해 설명 문장은 제외하고 항목 제목만 사용. -->
+    <section class="raw" id="raw-mbti">
+      <h2 class="section-title">16Personalities 원본 (INTP-A · 논리술사)</h2>
+      <p class="raw__notice">아래는 검사 원본 결과 그대로입니다. 위쪽 정리는 이 원본을 교차검증·보정한 결과입니다.</p>
+
+      <!-- 성격유형 5축 막대 (코드 재현, 이미지 미사용)
+           마커 위치 = 우세가 오른쪽이면 left:%, 왼쪽이면 left:(100−%) -->
+      <h3 class="raw__sub">성격 유형</h3>
+      <div class="axes">
+        <div class="axis" style="--axis: rgb(66,152,180); --axis-soft: rgba(66,152,180,.22); --pos: 71%;">
+          <div class="axis__head">I - 내향형 71%</div>
+          <div class="axis__track"><span class="axis__marker"></span></div>
+          <div class="axis__ends"><span>외향형</span><span>내향형</span></div>
+        </div>
+        <div class="axis" style="--axis: rgb(228,174,58); --axis-soft: rgba(228,174,58,.22); --pos: 18%;">
+          <div class="axis__head">N - 직관형 82%</div>
+          <div class="axis__track"><span class="axis__marker"></span></div>
+          <div class="axis__ends"><span>직관형</span><span>관찰형</span></div>
+        </div>
+        <div class="axis" style="--axis: rgb(51,164,116); --axis-soft: rgba(51,164,116,.22); --pos: 21%;">
+          <div class="axis__head">T - 사고형 79%</div>
+          <div class="axis__track"><span class="axis__marker"></span></div>
+          <div class="axis__ends"><span>사고형</span><span>감정형</span></div>
+        </div>
+        <div class="axis" style="--axis: rgb(136,97,154); --axis-soft: rgba(136,97,154,.22); --pos: 87%;">
+          <div class="axis__head">P - 탐구형 87%</div>
+          <div class="axis__track"><span class="axis__marker"></span></div>
+          <div class="axis__ends"><span>계획형</span><span>탐구형</span></div>
+        </div>
+        <div class="axis" style="--axis: rgb(242,94,98); --axis-soft: rgba(242,94,98,.22); --pos: 36%;">
+          <div class="axis__head">A - 확신형 64%</div>
+          <div class="axis__track"><span class="axis__marker"></span></div>
+          <div class="axis__ends"><span>확신형</span><span>민감형</span></div>
+        </div>
+      </div>
+
+      <!-- 영향을 미치는 특성 (원형 게이지 12개, 3분류) -->
+      <h3 class="raw__sub">영향을 미치는 특성</h3>
+
+      <h4 class="raw__group">커리어 패스</h4>
+      <div class="gauges">
+        <div class="gauge-item"><div class="gauge" style="--v:77"><span class="gauge__num">77</span></div><span class="gauge__label">완벽주의</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:60"><span class="gauge__num">60</span></div><span class="gauge__label">야망</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:44"><span class="gauge__num">44</span></div><span class="gauge__label">의욕</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:57"><span class="gauge__num">57</span></div><span class="gauge__label">리더십에 대한 열망</span></div>
+      </div>
+
+      <h4 class="raw__group">개인적 성장</h4>
+      <div class="gauges">
+        <div class="gauge-item"><div class="gauge" style="--v:60"><span class="gauge__num">60</span></div><span class="gauge__label">정신적 회복력</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:70"><span class="gauge__num">70</span></div><span class="gauge__label">자신감</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:24"><span class="gauge__num">24</span></div><span class="gauge__label">투지</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:60"><span class="gauge__num">60</span></div><span class="gauge__label">통제감</span></div>
+      </div>
+
+      <h4 class="raw__group">인간관계</h4>
+      <div class="gauges">
+        <div class="gauge-item"><div class="gauge" style="--v:64"><span class="gauge__num">64</span></div><span class="gauge__label">진정성</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:37"><span class="gauge__num">37</span></div><span class="gauge__label">충실함</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:7"><span class="gauge__num">7</span></div><span class="gauge__label">이타주의</span></div>
+        <div class="gauge-item"><div class="gauge" style="--v:60"><span class="gauge__num">60</span></div><span class="gauge__label">감성 지능</span></div>
+      </div>
+
+      <!-- 텍스트 항목 (제목만, 평소 접힘) -->
+      <h3 class="raw__sub">세부 항목</h3>
+
+      <h4 class="raw__group">커리어 패스</h4>
+      <details class="acc"><summary>강점</summary>
+        <ul class="acc__list"><li>참신한 관점</li><li>뛰어난 패턴 파악 능력</li><li>호기심을 통한 성장</li><li>높은 적응력</li><li>독립적이고 자기주도적인 성격</li><li>사실을 중시하는 성격</li></ul>
+      </details>
+      <details class="acc"><summary>약점</summary>
+        <ul class="acc__list"><li>업무를 완수하는 것을 어려워하는 성격</li><li>엄격한 체계를 꺼리는 성격</li><li>실무 감각 부족</li><li>스스로를 드러내지 않으려는 성격</li><li>일을 자주 미루는 성격</li><li>쉽게 집중력을 잃는 성격</li></ul>
+      </details>
+      <details class="acc"><summary>커리어 아이디어</summary>
+        <ul class="acc__list"><li>UX 리서처</li><li>소프트웨어 개발자</li><li>데이터 분석가</li><li>정보보안 전문가</li><li>테크니컬 라이터</li><li>연구 조교</li><li>금융 애널리스트</li><li>콘텐츠 전략가</li><li>게임 개발자</li><li>환경 분석가</li></ul>
+      </details>
+      <details class="acc"><summary>업무 스타일</summary>
+        <ul class="acc__list"><li>독립적인 환경</li><li>흥미로운 도전</li><li>유연한 가이드라인</li><li>조용하고 차분한 환경</li><li>거시적 사고</li><li>지속적인 학습</li></ul>
+      </details>
+
+      <h4 class="raw__group">개인적 성장</h4>
+      <details class="acc"><summary>강점</summary>
+        <ul class="acc__list"><li>깊은 성찰 능력</li><li>자기계발에 개방적인 성격</li><li>독창적 사고</li><li>진정성을 추구하는 성격</li><li>복잡한 것을 피하지 않는 성격</li><li>혼자 있을 때 편안함을 느끼는 성격</li></ul>
+      </details>
+      <details class="acc"><summary>약점</summary>
+        <ul class="acc__list"><li>사소한 결정도 과도하게 분석하는 성격</li><li>루틴을 따르기 어려워하는 성격</li><li>감정 표현을 어려워하는 성격</li><li>완고한 회의주의</li><li>공상에 잠기는 성격</li><li>자기관리를 소홀히 하는 성격</li></ul>
+      </details>
+      <details class="acc"><summary>동기 부여 요인</summary>
+        <ul class="acc__list"><li>새로운 것을 익히는 일</li><li>창의적 문제 해결</li><li>깊이 있는 대화</li><li>독립적인 프로젝트</li><li>역량 개발</li><li>연관성을 발견하는 일</li></ul>
+      </details>
+      <details class="acc"><summary>의욕 저하 요인</summary>
+        <ul class="acc__list"><li>지속적인 사교 활동</li><li>경직된 일정</li><li>감정적 갈등</li><li>잦은 방해</li><li>마이크로매니징</li><li>반복 업무</li></ul>
+      </details>
+
+      <h4 class="raw__group">인간관계</h4>
+      <details class="acc"><summary>강점</summary>
+        <ul class="acc__list"><li>진정성 있는 솔직함</li><li>풍부한 대화</li><li>개성을 존중하는 성격</li><li>논리적인 갈등 해소</li><li>사려 깊고 세심한 성격</li><li>개인적 경계를 존중하는 성격</li></ul>
+      </details>
+      <details class="acc"><summary>약점</summary>
+        <ul class="acc__list"><li>감정적으로 거리감이 있는 성격</li><li>관계를 시작하는 것을 어려워하는 성격</li><li>애정 표현을 불편해 하는 성격</li><li>사교 활동으로 인해 쉽게 지치는 성격</li><li>세심하지 않은 커뮤니케이션 스타일</li><li>감정적 대화를 피하는 성격</li></ul>
+      </details>
+      <details class="acc"><summary>대인관계에서의 강점</summary>
+        <ul class="acc__list"><li>사려 깊은 경청 능력</li><li>진솔한 조언</li><li>차이에 대한 존중</li><li>창의적 해결책</li><li>독립성을 존중하는 성격</li><li>끊임없는 호기심</li></ul>
+      </details>
+      <details class="acc"><summary>대인관계에서의 위험 요인</summary>
+        <ul class="acc__list"><li>거리감이 느껴지는 성격</li><li>갈등을 피하는 성격</li><li>감정을 과도하게 분석하려는 성격</li><li>지나치게 독립적인 성격</li><li>루틴을 따르기 어려워하는 성격</li><li>감정 표현이 부족한 성격</li></ul>
+      </details>
     </section>
 
     <!-- ⑥ 과거이력(증거층)으로 가는 버튼 -->
