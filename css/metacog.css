@@ -359,6 +359,9 @@ main.meta { max-width: 920px; }
   background: var(--point);
 }
 
+/* 게이지(원 그래프)와 그 아래 세부 항목 사이 간격 */
+.chipgroup .gauges { margin-bottom: 22px; }
+
 /* 묶음(강점·약점 등) 사이 간격 — 구간 간격(30px)보다 확실히 좁게 */
 .chipset { margin-bottom: 16px; }
 .chipset:last-child { margin-bottom: 0; }
