@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>리멤버 경력자 공고 추천 데이터</title>
+  <title>리멤버 경력자 공고 추천 데이터 — baeksoo inc.</title>
+  <meta name="description" content="채용 채널에 프로필을 등록해두고 8개월간 받은 공고 추천을 해석 없이 집계한 기록." />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="리멤버 경력자 공고 추천 데이터 — baeksoo inc." />
+  <meta property="og:description" content="채용 채널에 등록해두고 8개월간 관찰한 공고 추천 데이터." />
+  <meta property="og:url" content="https://baeksoo.kr/offers" />
+  <!-- og:image 는 이미지 준비 후 추가 예정 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/recruiting.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/recruiting.css" />
 </head>
 <body>
   <main class="recruit">
@@ -20,7 +27,7 @@
     <section class="setup">
       <!-- 관찰 채널 출처 표기 (작게, 중립). 로고 파일이 아직 없으면 onerror로 숨겨 깨진 아이콘 방지 -->
       <div class="source">
-        <img class="source__logo" src="assets/remember-logo.png" alt="리멤버"
+        <img class="source__logo" src="/assets/remember-logo.png" alt="리멤버"
              onerror="this.style.display='none'" />
         <span class="source__caption">관찰 채널</span>
       </div>
@@ -80,13 +87,13 @@
 
     <!-- 돌아가기 링크 (해석/닫기 멘트 없이 이동만) -->
     <nav class="back">
-      <a href="index.html">← 뒤로 가기</a>
+      <a href="/">← 뒤로 가기</a>
     </nav>
 
   </main>
 
   <!-- Chart.js (CDN, history와 동일 버전) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-  <script src="js/recruiting.js"></script>
+  <script src="/js/recruiting.js"></script>
 </body>
 </html>

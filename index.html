@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>취업을 업으로 — 기록</title>
+  <title>백수 주식회사 (baeksoo inc.)</title>
+  <meta name="description" content="퇴사한 전 F&amp;B 마케터가 재취업을 자기고용 프로젝트로 대해보는 기록. 그 과정을 공유합니다." />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="백수 주식회사 (baeksoo inc.)" />
+  <meta property="og:description" content="퇴사한 전 F&amp;B 마케터가 재취업을 자기고용 프로젝트로 대해보는 기록." />
+  <meta property="og:url" content="https://baeksoo.kr/" />
+  <!-- og:image 는 이미지 준비 후 추가 예정 -->
   <!-- Pretendard (오픈소스 웹폰트, jsDelivr CDN) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <main class="landing">
@@ -15,10 +23,10 @@
     <section class="hero">
       <div class="hero__inner">
         <!-- 캘리그래피(배경 없는 PNG) — 프로필 사진 위 -->
-        <img class="hero__calligraphy" src="assets/calligraphy.png" alt="" aria-hidden="true" />
+        <img class="hero__calligraphy" src="/assets/calligraphy.png" alt="" aria-hidden="true" />
         <!-- 추후 정식 사진 2장(정장/츄리닝) 확보 시 호버 전환 복원 가능 -->
         <div class="hero__photo">
-          <img class="hero__img" src="assets/profile1.jpg" alt="프로필" width="148" height="148" />
+          <img class="hero__img" src="/assets/profile1.jpg" alt="프로필" width="148" height="148" />
         </div>
         <div class="hero__copy">
           <p class="hero__lead">만 30살(곧 31),<br />퇴사한 1년차 전 F&amp;B 마케터,<br />현 전업 백수의</p>
@@ -51,7 +59,7 @@
     <!-- ④ 칩 A / 칩 B: 가로 2칸 -->
     <section class="chips">
       <!-- 자료실 칩: 자료실 메뉴로 연결 (파일 3종은 downloads.html 로 이동) -->
-      <a class="chip chip--link" href="library.html">
+      <a class="chip chip--link" href="/library">
         <span class="chip__label">자료실</span>
         <span class="chip__sub">코드·문서·템플릿</span>
         <span class="chip__empty">가져가 쓰기<span class="chip__arrow">→</span></span>
@@ -61,8 +69,8 @@
         <span class="chip__label">about 전업백수</span>
         <span class="chip__sub">나를 뜯어본 기록</span>
         <div class="chip__buttons">
-          <a class="chip__btn" href="history.html">과거이력 (+리멤버 데이터)<span class="chip__arrow">→</span></a>
-          <a class="chip__btn" href="metacog.html">메타인지 검사 결과<span class="chip__arrow">→</span></a>
+          <a class="chip__btn" href="/career">과거이력 (+리멤버 데이터)<span class="chip__arrow">→</span></a>
+          <a class="chip__btn" href="/me">메타인지 검사 결과<span class="chip__arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -72,16 +80,14 @@
       <p class="widget__note">성과 추적 중</p>
     </section>
 
-    <!-- ⑥ 채널 링크: 페이지에서 가장 또렷하게. URL 미정 → href="#" 자리 -->
+    <!-- ⑥ 채널 링크: 페이지에서 가장 또렷하게 -->
     <section class="channels">
-      <!-- 다음 TASK에서 각 href에 실제 채널 URL 연결 -->
-      <a class="channel" href="#">인스타</a>
-      <a class="channel" href="#">틱톡</a>
-      <a class="channel" href="#">스레드</a>
+      <a class="channel" href="https://www.instagram.com/baeksoo_inc" target="_blank" rel="noopener">인스타</a>
+      <a class="channel" href="https://www.tiktok.com/@baeksoo_inc" target="_blank" rel="noopener">틱톡</a>
     </section>
 
   </main>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
