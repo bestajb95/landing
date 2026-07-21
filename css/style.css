@@ -103,10 +103,14 @@ main {
 .hero__strong { margin: 0; color: var(--ink); font-weight: 600; }
 
 /* ② 영상 -------------------------------------------------- */
+/* Shorts(세로 영상)에 맞춘 9:16 프레임.
+   폰에선 본문 폭을 그대로 쓰고, 데스크탑에선 과도하게 길어지지 않게 폭을 제한해 가운데 정렬. */
 .video__frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  max-width: 360px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
   border-radius: var(--radius);
   overflow: hidden;
   background: #E7E2D8;
