@@ -28,12 +28,15 @@ main {
   padding: 28px 20px 48px;
 }
 
-/* 상단 이미지 — 콘텐츠 폭 전체. 카드/그림자/라운드 없이 담백하게 */
+/* 상단 이미지 — 콘텐츠 폭(600px)에 맞춘 고정 크기.
+   콘텐츠 영역 = main max-width 640px − 좌우 패딩 40px = 600px.
+   모바일에서 화면보다 넓어지지 않게 max-width로만 축소 허용. */
 .cover {
   display: block;
-  width: 100%;
+  width: 600px;
+  max-width: 100%;
   height: auto;
-  margin-bottom: 28px;
+  margin: 0 auto 28px;
 }
 
 /* [헤더] */
