@@ -25,7 +25,15 @@ body {
 main {
   max-width: 640px;
   margin: 0 auto;
-  padding: 40px 20px 48px;
+  padding: 28px 20px 48px;
+}
+
+/* 상단 이미지 — 콘텐츠 폭 전체. 카드/그림자/라운드 없이 담백하게 */
+.cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 28px;
 }
 
 /* [헤더] */
